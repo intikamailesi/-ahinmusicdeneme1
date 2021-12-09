@@ -42,21 +42,19 @@ def start_markup(chat_id: int, bot_username: str):
             [
                 InlineKeyboardButton(gm(chat_id, "helpbutton"), callback_data="cbhelp"),
                 InlineKeyboardButton(
-                    gm(chat_id, "Developer"), url="https://t.me/ThomasShebLYY"
+                    gm(chat_id, "maintainer"), url="https://t.me/ThomasShebLYY"
                 ),
             ],
             [
-                InlineKeyboardButton(
-                    gm(chat_id, "Updates_channel"), url=config.CHANNEL_LINK
-                ),
+                InlineKeyboardButton(gm(chat_id, "channel"), url=config.CHANNEL_LINK),
                 InlineKeyboardButton(
                     gm(chat_id, "group_support"), url=config.GROUP_LINK
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    gm(chat_id, "Chit_Chat_Group"),
-                    url="https://t.me/tamil_chatzzz",
+                    gm(chat_id, "source_code"),
+                    url="https://t.me/angelsupports",
                 )
             ],
         ]
