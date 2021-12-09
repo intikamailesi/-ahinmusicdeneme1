@@ -35,26 +35,26 @@ def start_markup(chat_id: int, bot_username: str):
         [
             [
                 InlineKeyboardButton(
-                    gm(chat_id, "add_to_chat"),
+                    gm(chat_id, "💖 ADD ANGEL TO YOUR GROUP 💖"),
                     url=f"https://t.me/{bot_username}?startgroup=true",
                 )
             ],
             [
-                InlineKeyboardButton(gm(chat_id, "helpbutton"), callback_data="cbhelp"),
+                InlineKeyboardButton(gm(chat_id, "🔺 HELP 🔺"), callback_data="cbhelp"),
                 InlineKeyboardButton(
-                    gm(chat_id, "maintainer"), url="https://t.me/talktoabdul_bot"
+                    gm(chat_id, "🥂 OWNER 🥂"), url="https://t.me/ThomasShebLYY"
                 ),
             ],
             [
-                InlineKeyboardButton(gm(chat_id, "channel"), url=config.CHANNEL_LINK),
+                InlineKeyboardButton(gm(chat_id, "🔰 CHANNEL 🔰"), url=config.CHANNEL_LINK),
                 InlineKeyboardButton(
                     gm(chat_id, "group_support"), url=config.GROUP_LINK
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    gm(chat_id, "source_code"),
-                    url="https://github.com/DoellBarr/solidmusic",
+                    gm(chat_id, "🤩 Chit Chat Grp 🤩"),
+                    url="https://t.me/tamil_chatzzz",
                 )
             ],
         ]
