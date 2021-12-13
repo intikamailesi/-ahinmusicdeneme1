@@ -16,7 +16,8 @@ class ChatDB(Scaffold):
                 only_admin,
                 gcast_type,
                 del_cmd_mode,
-                player_mode
+                player_mode,
+                duration
             ) = chat
             admin = bool(only_admin)
             x = {
@@ -27,7 +28,8 @@ class ChatDB(Scaffold):
                 "only_admin": admin,
                 "gcast_type": gcast_type,
                 "del_cmd_mode": del_cmd_mode,
-                "player_mode": player_mode
+                "player_mode": player_mode,
+                "duration": duration
             }
             final.append(x.copy())
         return final
@@ -47,7 +49,7 @@ class ChatDB(Scaffold):
         x = list(self.cur.execute("SELECT * FROM chat_db WHERE chat_id = ?", (chat_id,)))
         if not x:
             self.cur.execute(
-                "INSERT INTO chat_db VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                "INSERT INTO chat_db VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 (
                     config.OWNER_ID,
                     chat_id,
@@ -56,7 +58,8 @@ class ChatDB(Scaffold):
                     False,
                     "bot",
                     True,
-                    True
+                    True,
+                    0,
                 ),
             )
             self.conn.commit()
@@ -187,6 +190,23 @@ class ChatDB(Scaffold):
         )
         conn.commit()
         return "player_mode_changed"
+
+    def set_duration_limit(self, chat_id: int, duration: int):
+        cur, conn = self.cur, self.conn
+        chats = self.get_chat(chat_id)
+        for chat in chats:
+            if duration == int(chat["duration"]):
+                return "duration_limit_already_set"
+        cur.execute(
+            """
+            UPDATE chat_db
+            SET duration = ?
+            WHERE chat_id = ?
+            """,
+            (duration, chat_id)
+        )
+        conn.commit()
+        return "duration_limit_changed"
 
     def reload_data(self):
         for chat in self.cur.execute("SELECT * FROM chat_db"):
