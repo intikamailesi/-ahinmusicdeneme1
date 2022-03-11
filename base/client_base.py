@@ -16,3 +16,5 @@ bot = Client(
 
 
 call_py = PyTgCalls(user, cache_duration=180)
+
+run = call_py.start 
