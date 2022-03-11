@@ -4,5 +4,5 @@ from os import path, mkdir
 from core.clients import bot
 
 
-player.start
+player.run
 bot.start
