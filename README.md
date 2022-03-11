@@ -50,5 +50,6 @@ $ sudo su
 # cp sample.env .env 
 # nano .env # fill it with your env 
 # python3 main.py
-https://heroku.com/deploy?template=https://github.com/intikamailesi/-ahinmusicdeneme1
+
 ```
+https://heroku.com/deploy?template=https://github.com/intikamailesi/-ahinmusicdeneme1
