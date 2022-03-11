@@ -1,3 +1,4 @@
+from base.client_base import run
 from base.player import player
 from sys import version
 from os.path import exists
@@ -22,3 +23,4 @@ def main():
 
 
 main()
+run()
